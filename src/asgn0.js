@@ -15,9 +15,17 @@ function main() {
     ctx.fillStyle = 'rgba(0, 0, 0, 1.0)'; // set to black
     ctx.fillRect(0, 0, 400, 400); // Fill a rectangle with the color
 
-    var v1 = new Vector3([2.25, 2.25, 0]); 
+    // NOT DYNAMIC
+    //var v1 = new Vector3([2.25, 2.25, 0]); 
+    //drawVector(ctx, v1, "red"); 
 
-    drawVector(ctx, v1, "red"); 
+    document.getElementById('button').addEventListener('click', function(){ 
+
+        handleDrawEvent(ctx); 
+
+        }
+
+    );
 } 
 
 // drawVector(v, color) 
@@ -42,4 +50,21 @@ function drawVector(canvas, vector, color){
     // draw 
     canvas.stroke(); 
 
+}
+
+// handleDrawEvent() 
+function handleDrawEvent(canvas){ 
+
+    // clear canvas 
+    canvas.clearRect(0, 0, 400, 400); 
+    canvas.fillStyle = 'rgba(0, 0, 0, 1.0)'; 
+    canvas.fillRect(0, 0, 400, 400);  
+
+    // grab input from HTML 
+    var x1 = document.getElementById('x1').value;
+    var y1 = document.getElementById('y1').value;
+
+    var v1 = new Vector3([x1, y1, 0]); 
+
+    drawVector(canvas, v1, "red"); 
 }
