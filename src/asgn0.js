@@ -76,3 +76,33 @@ function handleDrawEvent(canvas){
 
     drawVector(canvas, v2, "blue"); 
 }
+
+// handleDrawOperationEvent() 
+function handleDrawOperationEvent(canvas){ 
+    
+    // clear canvas 
+    canvas.clearRect(0, 0, 400, 400); 
+    canvas.fillStyle = 'rgba(0, 0, 0, 1.0)'; 
+    canvas.fillRect(0, 0, 400, 400);  
+
+    // grab input from HTML 
+    var x1 = document.getElementById('x1').value;
+    var y1 = document.getElementById('y1').value;
+
+    var v1 = new Vector3([x1, y1, 0]); 
+
+    drawVector(canvas, v1, "red"); 
+
+    // grab input from HTML 
+    var x2 = document.getElementById('x2').value;
+    var y2 = document.getElementById('y2').value;
+
+    var v2 = new Vector3([x2, y2, 0]); 
+
+    drawVector(canvas, v2, "blue"); 
+
+    // grab input from HTML 
+    var scale = document.getElementById('scalar').value; 
+    var op = document.getElementById('dropdown').value; 
+
+}
