@@ -193,11 +193,13 @@ function handleDrawOperationEvent(canvas){
         var c = Vector3.cross(v1, v2);
         
         var area = c.magnitude()/2;
-        
+
         console.log("Area is ", area);
 
         return;
 
     }
+
+    //comment
 
 }
