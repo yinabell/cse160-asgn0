@@ -26,6 +26,14 @@ function main() {
         }
 
     );
+
+    document.getElementById('button2').addEventListener('click', function(){ 
+
+        handleDrawOperationEvent(ctx); 
+
+        }
+
+    );
 } 
 
 // drawVector(v, color) 
@@ -104,5 +112,45 @@ function handleDrawOperationEvent(canvas){
     // grab input from HTML 
     var scale = document.getElementById('scalar').value; 
     var op = document.getElementById('dropdown').value; 
+
+    if (op == 'add'){ 
+
+        var v3 = new Vector3(v1.elements).add(v2); 
+        drawVector(canvas, v3, "green"); 
+
+        return;
+
+    }
+
+    if (op == 'sub'){ 
+
+        var v3 = new Vector3(v1.elements).sub(v2); 
+        drawVector(canvas, v3, "green"); 
+
+        return;
+
+    }
+
+    if (op == 'mul'){ 
+
+        var v3 = new Vector3(v1.elements).mul(scale); 
+        var v4 = new Vector3(v2.elements).mul(scale); 
+        drawVector(canvas, v3, "green"); 
+        drawVector(canvas, v4, "green"); 
+
+        return;
+
+    }
+
+    if (op == 'div'){ 
+
+        var v3 = new Vector3(v1.elements).div(scale); 
+        var v4 = new Vector3(v2.elements).div(scale); 
+        drawVector(canvas, v3, "green"); 
+        drawVector(canvas, v4, "green"); 
+
+        return;
+
+    }
 
 }
