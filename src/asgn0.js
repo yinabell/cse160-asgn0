@@ -173,4 +173,31 @@ function handleDrawOperationEvent(canvas){
 
     }
 
+    if (op == 'ang'){ 
+
+        // dot product of v1 and v2
+        var d = Vector3.dot(v1, v2);
+        var m1 = v1.magnitude();
+        var m2 = v2.magnitude();
+        var angle = Math.acos(d / (m1 * m2)) * (180/Math.PI);
+
+        console.log("Angle is ", angle);
+
+        return;
+
+    }
+
+    if (op == 'area'){ 
+
+        // cross product of v1 and v2
+        var c = Vector3.cross(v1, v2);
+        
+        var area = c.magnitude()/2;
+        
+        console.log("Area is ", area);
+
+        return;
+
+    }
+
 }
