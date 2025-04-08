@@ -153,4 +153,24 @@ function handleDrawOperationEvent(canvas){
 
     }
 
+    if (op == 'mag'){ 
+
+        v1.magnitude();
+        v2.magnitude();
+
+        return;
+
+    }
+
+    if (op == 'norm'){ 
+
+        var v3 = new Vector3(v1.elements).normalize(); 
+        var v4 = new Vector3(v2.elements).normalize(); 
+        drawVector(canvas, v3, "green"); 
+        drawVector(canvas, v4, "green"); 
+
+        return;
+
+    }
+
 }
